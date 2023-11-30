@@ -8,12 +8,9 @@
 - Se debe de abrir el archivo .cpp con el programa DEVC++ 5.11.
 - Diríjase a la barra de herramientas ubicada en la zona superior.
 - Haga click en el botón "Compilar y Ejecutar" o por su preferencia Pulsar "F11" en su teclado.
-- TIP:
-Si su PC/Laptop/Notebook tiene problemas al compilar debido a la version de su ISO, este debe ser actualizado de la siguiente manera:
-- 1.Forma a:
-  Project -> Project Options -> Compiler -> Code Generation -> Language standart (-std). And finally set: GNU C++11.
-- 2.Forma b:
-  Compiler options-> Settings-> Code generation-> Language standard and chose GNU C++11.
+- TIP: Si su PC/Laptop/Notebook tiene problemas al compilar debido a la version de su ISO, este debe ser actualizado de la siguiente manera:
+- 1. Forma A: Project -> Project Options -> Compiler -> Code Generation -> Language standart (-std). And finally set: GNU C++11.
+- 2. Forma B: Compiler options-> Settings-> Code generation-> Language standard and chose GNU C++11.
 ## Ejecución del Programa.
 - Se abrirá una pequeña ventana en negro.
 - Sigas las instrucciones en pantalla.
@@ -21,5 +18,5 @@ Si su PC/Laptop/Notebook tiene problemas al compilar debido a la version de su I
 Asegurese de que su computadora cuenta con ambos archivos subidos conjunto con este código:
 - Ciudades.txt
 - Guardianes.txt
-El programa no funcionará si usted no cuenta con dichos archivos de texto en su computadora.
+El programa no funcionará si usted no cuenta con dichos archivos de texto en su computadora y el código se lo hará saber.
 ## Link
