@@ -50,7 +50,7 @@ void DescendentPower(Node* root, int& count, int& countReino){
 	if (root == nullptr || count == 0){
 		return;
 	}
-	printDescendingPower(root->right, count, countReino);								// Se imprime.
+	DescendentPower(root->right, count, countReino);								// Se imprime.
 	
 	if (root->guardian.powerLevel >= 90 && root->guardian.powerLevel <= 100) {			// Se establece la distincion entre puntos de poder para ser Guardian de Reino o Candidato.
         if (countReino < 3) {
@@ -74,11 +74,11 @@ void PoderPostBatalla(Guardian& guardian, int puntajeBatalla){
 			guardian.powerLevel = 100;													// Si supera el parametro establecido, se limita el puntaje a 100.
 		}
 	} else {
-		guardian.po	powerLevel -= puntajeBatalla;										// Encargado de restar puntaje.
+		guardian.powerLevel -= puntajeBatalla;										// Encargado de restar puntaje.
 	}
 }
 // Verifica si un guardian tiene al menos un aprendiz en el arbol.
-void MaestroGuardian (const Guardian& guardian, Node* guardianTree){
+bool MaestroGuardian (const Guardian& guardian, Node* guardianTree){
 	if (guardianTree == nullptr) {
 		return false; 																	// Si el arbol se encuentra vacio, el guardian no es ni aprendiz ni maestro.
 	}
@@ -89,16 +89,38 @@ void MaestroGuardian (const Guardian& guardian, Node* guardianTree){
 }
 
 int main (){
+	// Funcion que carga los datos del archivo "Ciudades.txt"
+	ifstream cityFile("Ciudades.txt");
+    if (!cityFile.is_open()) {
+    	cout << "Archivo Ciudades.txt no encontrado." << endl;
+        cout << "No se ha podido abrir correctamente." << endl;
+        return 1;
+    } else {
+    	cout << "Archivo Ciudades.txt encontrado.";
+        cout << "...Archivo abierto satisfactoriamente" << endl;
+    }
+    // Funcion que carga los datos del archivo "Guardianes.txt"
+    ifstream guardianFile("Guardianes.txt");
+    if (!guardianFile.is_open()) {
+        cout << "Archivo Guardianes.txt no encontrado." << endl;
+        cout << "No se ha podido abrir correctamente." << endl;
+        return 1;
+    } else {
+        cout << "Archivo Guardianes.txt encontrado.";
+        cout << "...Archivo abierto satisfactoriamente" << endl;
+    }
+	// Menu principal del juego
 	bool cerrar = false;
 	while (!cerrar){
+		cout << endl;
 		cout << "---------------------BIENVENIDO FORASTERO---------------------" << endl;
 		cout << "----------------AL JUEGO: THE GUARDIAN BATTLE----------------" << endl;
 		cout << "---[MENU PRINCIPAL]" << endl;
-		cout << "1- [Lista de Guardianes Candidatos]" << endl;
-        cout << "2- [Ver Guardian Específico]" << endl;
-        cout << "3- [Conoce el Reino]" << endl;
-        cout << "4- [Presenciar Disputa]" << endl;
-        cout << "5- [Salir del Juego]" << endl;
+		cout << "1- Lista de Guardianes Candidatos" << endl;
+        cout << "2- Ver Guardian Específico" << endl;
+        cout << "3- Conoce el Reino" << endl;
+        cout << "4- Presenciar Disputa" << endl;
+        cout << "5- Salir del Juego" << endl;
         
         int opcion;
         cout << "Ingrese una opcion [1-5]: ";
