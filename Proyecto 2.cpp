@@ -5,36 +5,12 @@
 #include <vector>
 #include <random>
 #include <unordered_map>
+#include <unordered_set>
 #include <limits>
+#include <string>
+#include <algorithm>
 
 using namespace std;
-
-class GrafoUnidireccional{
-	private:
-		unordered_map<string, int> cityIndexMap;
-	    vector<vector<int>> adjacencyMatrix;
-	    vector<string> cities;
-	    unordered_map<string, GuardianTreeNode*> cityGuardianTrees; 		// Representa los guardianes por ciudad.
-	    unordered_map<string, GuardianTreeNode*> cityMasterTrees;			// Representa la jerarquia dentro de cada ciudad.
-	    
-	public: 
-	    GrafoUnidireccional() = default;
-	    // Funcion que crea aristas.
-	    void addEdge(const string& src, const string& dest) {				// Se crean aristas en el grafo para conectar los ciudades (los nodos).
-	        int srcIndex = getIndex(src);
-	        int destIndex = getIndex(dest);
-	        
-	        adjacencyMatrix[srcIndex][destIndex] = 1;
-	        adjacencyMatrix[destIndex][srcIndex] = 1; 
-	
-	        cout << "Conexion agregada: " << src << " <-> " << dest << "(No ponderado)" << endl;
-	    }
-	    // Funcion que elimina aristas.
-	    void removeEdge(const string& src, const string& dest){
-	    	int srcIndex = getIndex(src);
-    		int destIndex = getIndex(dest);
-		}
-};
 
 // Estructuras:
 // Estructura para almacenar la información de los Guardianes.
@@ -114,11 +90,10 @@ bool MaestroGuardian (const Guardian& guardian, Node* guardianTree){
 	}
 	return MaestroGuardian (guardian, guardianTree->left) || MaestroGuardian (guardian, guardianTree->right);
 }
-
 int main (){
-	// Funcion que carga los datos del archivo "Ciudades.txt"
+	
 	ifstream fileCiudad("Ciudades.txt");
-    if (!fileCiudad(.is_open()) {
+    if (!fileCiudad.is_open()) {
     	cout << "Archivo Ciudades.txt no encontrado." << endl;
         cout << "No se ha podido abrir correctamente." << endl;
         return 1;
@@ -129,13 +104,16 @@ int main (){
     // Funcion que carga los datos del archivo "Guardianes.txt"
     ifstream fileGuardian("Guardianes.txt");
     if (!fileGuardian.is_open()) {
+    	cout << endl;
         cout << "Archivo Guardianes.txt no encontrado." << endl;
         cout << "No se ha podido abrir correctamente." << endl;
         return 1;
     } else {
+    	cout << endl;
         cout << "Archivo Guardianes.txt encontrado.";
         cout << "...Archivo abierto satisfactoriamente" << endl;
     }
+
 	// Menu principal del juego
 	bool cerrar = false;
 	while (!cerrar){
