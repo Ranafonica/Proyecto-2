@@ -2,10 +2,10 @@
 #include <iostream>
 #include <fstream>
 #include <sstream>
-#include <unordered_map>
 #include <vector>
-#include <limits>
 #include <random>
+#include <unordered_map>
+#include <limits>
 
 using namespace std;
 
@@ -44,14 +44,13 @@ void InsertNode(Node*& root, const Guardian& guardian){
         InsertNode(root->right, guardian);
     }
 }
-
 // Recorre de manera inversa el arbol, es decir, de derecha a izquierda.
 // Aqui se hace la distincion entre los Guardianes del Reino y los Candidatos a Reino.
 void DescendentPower(Node* root, int& count, int& countReino){
 	if (root == nullptr || count == 0){
 		return;
 	}
-	printDescendingPower(root->right, count, countReino);								// Se imprime 
+	printDescendingPower(root->right, count, countReino);								// Se imprime.
 	
 	if (root->guardian.powerLevel >= 90 && root->guardian.powerLevel <= 100) {			// Se establece la distincion entre puntos de poder para ser Guardian de Reino o Candidato.
         if (countReino < 3) {
@@ -65,4 +64,31 @@ void DescendentPower(Node* root, int& count, int& countReino){
         }
     }
     DescendentPower(root->left, count, countReino);
+}
+// Actualiza el nivel de poder del guardian según el resultado de la batalla.
+void PoderPostBatalla(Guardian& guardian, int puntajeBatalla){
+	if (puntajeBatalla > 0){															
+		if (guardian.powerLevel + puntajeBatalla <= 100){								// Verificar si sumar los puntos llevará al poder por encima de 100.
+			guardian.powerLevel += puntajeBatalla;										// Encargado de sumar puntaje.
+		} else {
+			guardian.powerLevel = 100;													// Si supera el parametro establecido, se limita el puntaje a 100.
+		}
+	} else {
+		guardian.po	powerLevel -= puntajeBatalla;										// Encargado de restar puntaje.
+	}
+}
+// Verifica si un guardian tiene al menos un aprendiz en el arbol.
+void MaestroGuardian (const Guardian& guardian, Node* guardianTree){
+	if (guardianTree == nullptr) {
+		return false; 																	// Si el arbol se encuentra vacio, el guardian no es ni aprendiz ni maestro.
+	}
+	if (guardian.name == guardianTree->guardian.name) {
+		return guardianTree->left != nullptr || guardianTree->right != nullptr;			// Si el guardián tiene el mismo nombre que el guardián actual dentro de ese nodo. Se verifica si el nodo actual tiene al menos un hijo. 
+	}
+	return MaestroGuardian (guardian, guardianTree->left) || MaestroGuardian (guardian, guardianTree->right);
+}
+
+int main (){
+	
+	return 0;
 }
