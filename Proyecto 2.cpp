@@ -89,6 +89,46 @@ void MaestroGuardian (const Guardian& guardian, Node* guardianTree){
 }
 
 int main (){
-	
+	bool cerrar = false;
+	while (!cerrar){
+		cout << "---------------------BIENVENIDO FORASTERO---------------------" << endl;
+		cout << "----------------AL JUEGO: THE GUARDIAN BATTLE----------------" << endl;
+		cout << "---[MENU PRINCIPAL]" << endl;
+		cout << "1- [Lista de Guardianes Candidatos]" << endl;
+        cout << "2- [Ver Guardian Específico]" << endl;
+        cout << "3- [Conoce el Reino]" << endl;
+        cout << "4- [Presenciar Disputa]" << endl;
+        cout << "5- [Salir del Juego]" << endl;
+        
+        int opcion;
+        cout << "Ingrese una opcion [1-5]: ";
+        cin >> opcion;
+        
+        switch (opcion){
+        	case 1:{
+				break;
+			}
+			case 2:{
+				
+				break;
+			}
+			case 3:{
+				
+				break;
+			}
+			case 4:{
+				
+				break;
+			}
+			case 5:{
+				cerrar = true;
+				break;
+			}
+			default:{
+				cout << "¡Oops! Opcion ingresada no es valida. Favor intente nuevamente" << endl;
+				break;
+			}
+		}
+	}
 	return 0;
 }
