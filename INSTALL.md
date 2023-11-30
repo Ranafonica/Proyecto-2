@@ -8,6 +8,12 @@
 - Se debe de abrir el archivo .cpp con el programa DEVC++ 5.11.
 - Diríjase a la barra de herramientas ubicada en la zona superior.
 - Haga click en el botón "Compilar y Ejecutar" o por su preferencia Pulsar "F11" en su teclado.
+TIP:
+Si su PC/Laptop/Notebook tiene problemas al compilar debido a la version de su ISO, este debe ser actualizado de la siguiente manera:
+  1.Forma a:
+  Project -> Project Options -> Compiler -> Code Generation -> Language standart (-std). And finally set: GNU C++11.
+  2.Forma b:
+  Compiler options-> Settings-> Code generation-> Language standard and chose GNU C++11.
 ## Ejecución del Programa.
 - Se abrirá una pequeña ventana en negro.
 - Sigas las instrucciones en pantalla.
