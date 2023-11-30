@@ -9,6 +9,33 @@
 
 using namespace std;
 
+class GrafoUnidireccional{
+	private:
+		unordered_map<string, int> cityIndexMap;
+	    vector<vector<int>> adjacencyMatrix;
+	    vector<string> cities;
+	    unordered_map<string, GuardianTreeNode*> cityGuardianTrees; 		// Representa los guardianes por ciudad.
+	    unordered_map<string, GuardianTreeNode*> cityMasterTrees;			// Representa la jerarquia dentro de cada ciudad.
+	    
+	public: 
+	    GrafoUnidireccional() = default;
+	    // Funcion que crea aristas.
+	    void addEdge(const string& src, const string& dest) {				// Se crean aristas en el grafo para conectar los ciudades (los nodos).
+	        int srcIndex = getIndex(src);
+	        int destIndex = getIndex(dest);
+	        
+	        adjacencyMatrix[srcIndex][destIndex] = 1;
+	        adjacencyMatrix[destIndex][srcIndex] = 1; 
+	
+	        cout << "Conexion agregada: " << src << " <-> " << dest << "(No ponderado)" << endl;
+	    }
+	    // Funcion que elimina aristas.
+	    void removeEdge(const string& src, const string& dest){
+	    	int srcIndex = getIndex(src);
+    		int destIndex = getIndex(dest);
+		}
+};
+
 // Estructuras:
 // Estructura para almacenar la información de los Guardianes.
 struct Guardian {
@@ -90,8 +117,8 @@ bool MaestroGuardian (const Guardian& guardian, Node* guardianTree){
 
 int main (){
 	// Funcion que carga los datos del archivo "Ciudades.txt"
-	ifstream cityFile("Ciudades.txt");
-    if (!cityFile.is_open()) {
+	ifstream fileCiudad("Ciudades.txt");
+    if (!fileCiudad(.is_open()) {
     	cout << "Archivo Ciudades.txt no encontrado." << endl;
         cout << "No se ha podido abrir correctamente." << endl;
         return 1;
@@ -100,8 +127,8 @@ int main (){
         cout << "...Archivo abierto satisfactoriamente" << endl;
     }
     // Funcion que carga los datos del archivo "Guardianes.txt"
-    ifstream guardianFile("Guardianes.txt");
-    if (!guardianFile.is_open()) {
+    ifstream fileGuardian("Guardianes.txt");
+    if (!fileGuardian.is_open()) {
         cout << "Archivo Guardianes.txt no encontrado." << endl;
         cout << "No se ha podido abrir correctamente." << endl;
         return 1;
@@ -147,6 +174,7 @@ int main (){
 				break;
 			}
 			default:{
+				cout << endl;
 				cout << "¡Oops! Opcion ingresada no es valida. Favor intente nuevamente" << endl;
 				break;
 			}
