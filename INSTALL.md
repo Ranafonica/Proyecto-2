@@ -20,4 +20,4 @@ Asegurese de que su computadora cuenta con ambos archivos subidos conjunto con e
 - Guardianes.txt
 El programa no funcionará si usted no cuenta con dichos archivos de texto en su computadora y el código se lo hará saber.
 ## Link
-(https://sourceforge.net/projects/orwelldevcpp/files/latest/download)
+Descarga Compilador [DEVC++ 5.11] (https://sourceforge.net/projects/orwelldevcpp/files/latest/download)
