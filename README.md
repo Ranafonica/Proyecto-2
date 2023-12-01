@@ -8,12 +8,12 @@ Se hablara de las estructuras declaradas en el código del programa. (aunque muc
 - Struct Node: Estructura para almacenar la información de los Nodos.
 - Struct GuardianNodoArbol: Estructura para almacenar la información del arbol de guardianes.
 ## Grafos Implementados.
-using Grafo = unordered_map<string, unordered_set<string>>;
+- using Grafo = unordered_map<string, unordered_set<string>>;
 Los viajes entre ciudades no son tarea fácil, por lo que se implementó el uso de Grafos para generar lazos entre ciudades y que, a su vez, los Guardianes tuvieran un nexo entre las Ciudades donde pueden moverse.
--lecturaCiudad: Funcion encargada de cargar los datos del archivo "Ciudades.txt" que permitirá indicar mediante este archivo texto, las ciudades disponibles para cada Guardian.
--imprimirGrafo: Como dice su nombre. Funcion para la impresion de grafo general gracias a la funcion "vecinos" y "par." que permitirá establecer una conexion entre los nodos del grafo, para generar una estructura enlazada más grande.
--MatrizComparacion: Funcion que crea una matriz de comparación que nos permite ver de otra perspectiva el grafo anteriormente creado, generando enlaces entre los Nodos del grafo, viendo de manera más gráfica los nodos que se intersectan entre cada uno. En simnples palabras, es la impresión del grafo pero en forma de matríz.
--leerGuardianesDesdeArchivo: Funcion, al igual que lecturaCiudad, es la encargada de cargar los datos del archivo "Guardianes.txt" para ser mostrado posteriormente.
+- lecturaCiudad: Funcion encargada de cargar los datos del archivo "Ciudades.txt" que permitirá indicar mediante este archivo texto, las ciudades disponibles para cada Guardian.
+- imprimirGrafo: Como dice su nombre. Funcion para la impresion de grafo general gracias a la funcion "vecinos" y "par." que permitirá establecer una conexion entre los nodos del grafo, para generar una estructura enlazada más grande.
+- MatrizComparacion: Funcion que crea una matriz de comparación que nos permite ver de otra perspectiva el grafo anteriormente creado, generando enlaces entre los Nodos del grafo, viendo de manera más gráfica los nodos que se intersectan entre cada uno. En simnples palabras, es la impresión del grafo pero en forma de matríz.
+- leerGuardianesDesdeArchivo: Funcion, al igual que lecturaCiudad, es la encargada de cargar los datos del archivo "Guardianes.txt" para ser mostrado posteriormente.
 ## Funciones Principales.
 - InsertNode: Inserta un nuevo nodo en el arbol binario bajo el parametro del nivel de poder.
 - DescendentPower: Recorre de manera inversa el arbol, es decir, de derecha a izquierda. Aqui se hace la distincion entre los Guardianes del Reino y los Candidatos a Reino.
