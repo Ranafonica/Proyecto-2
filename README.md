@@ -21,4 +21,6 @@ Los viajes entre ciudades no son tarea fácil, por lo que se implementó el uso 
 - MaestroGuardian: Verifica si un guardian tiene al menos un aprendiz en el arbol, con parámetros que indican si el arbol se encuentra vacio, el guardian no es ni aprendiz ni maestro o si el guardián tiene el mismo nombre que el guardián actual dentro de ese nodo. También se verifica si el nodo actual tiene al menos un hijo.
 - Se declara una una función que le indica al usuario si este presenta los archivos "Guardianes.txt" y "Ciudades.txt" en su computadora. Los cuales son fileCiudad y fileGuardian respectivamente.
 - Main: Se encuentra el menú del programa que será el punto de interaccion entre el código y el usuario. Se establece las opciones del menú donde el usuario podrá interactuar, y tambien, se validan los datos entregados por el mismo. Dentro del menú, habrán diferentes opciones que el usuario podrá interactuar, donde cada una le llevará a otro apartado, si el usuario lee claramente las indicaciones por pantalla. Cada enunciado lo llevará a una acción concreta dentro del código.
+## Link Video
+(insertar link)
 
