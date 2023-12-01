@@ -48,7 +48,7 @@ class GrafoUnidireccional {
             int newIndex = cities.size();
             cities.push_back(city);
             cityIndexMap[city] = newIndex;
-            for (auto& row : adjacencyMatrix) {									// Adjunta matriz a un tamaño general para todos.
+            for (auto& row : adjacencyMatrix) {									// Adjunta matriz a un tamaÃ±o general para todos.
                 row.resize(cities.size(), 0);
             }
             adjacencyMatrix.resize(cities.size(), vector<int>(cities.size(), 0));
@@ -119,7 +119,7 @@ int main() {
     GrafoUnidireccional graph;
 
     string cityLine;
-    getline(cityFile, cityLine); // Ignorar la primera línea
+    getline(cityFile, cityLine); // Ignorar la primera lÃ­nea
 
     while (getline(cityFile, cityLine)) 
     {
@@ -127,7 +127,7 @@ int main() {
         string city, connection;
         if (getline(iss, city, ',') && getline(iss, connection)) {
                 int weight = 1; // Peso por defecto
-                graph.addEdge(city, connection, weight); // Agregar la conexión al grafo
+                graph.addEdge(city, connection, weight); // Agregar la conexiÃ³n al grafo
             }
     }
 
@@ -211,7 +211,7 @@ int main() {
             cout << "2- Conexion con Ciudad a Escoger" << endl;
 
             int opcionReino;
-            cout << "¡Buena decision!" << endl;
+            cout << "Â¡Buena decision!" << endl;
             cout << "Ingresa tu eleccion: ";
             cin >> opcionReino;
 
@@ -236,7 +236,7 @@ int main() {
                     graph.printCityConnections(cityToCheck);
                     
                 } else {
-                    cout << "Dicho numero ingresado no es válido" << endl;
+                    cout << "Dicho numero ingresado no es vÃ¡lido" << endl;
                 }
             } else {
                 cout << "Opcion invalida." << endl;
